@@ -27,3 +27,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 ### Installed packages:
 
 * https://www.npmjs.com/package/react-favicon (For Favicon)
+* https://reactrouter.com/docs/en/v6/getting-started/installation (Router)
