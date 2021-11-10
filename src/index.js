@@ -6,12 +6,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Favicon from 'react-favicon';
+import {Provider} from "react-redux";
+import store from "./app/store";
+
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Favicon url='https://www.downloadclipart.net/large/feedback-png-pic.png' />
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <Favicon url='https://www.downloadclipart.net/large/feedback-png-pic.png' />
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
