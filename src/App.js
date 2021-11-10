@@ -6,7 +6,8 @@ import Login from "./pages/Login";
 import RootPage from "./pages/RootPage";
 
 function App() {
-  const user = useSelector((state) => state.user.user);
+  const user = localStorage.getItem("user");
+  console.log(user)
 
   if(user){
     return (

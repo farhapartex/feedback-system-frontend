@@ -13,7 +13,8 @@ const Login = ()=>{
     const handleLogin = () => {
         const requestBody = {
             email: email,
-            password: password
+            password: password,
+            isLoggedIn: true
         }
 
         dispatch(login(requestBody));
