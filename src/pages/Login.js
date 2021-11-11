@@ -48,7 +48,7 @@ const Login = ()=>{
             if(! item.value || item.length === 0){
                 errorList.push(item.field + " is missing")
             }
-            else if(item.field == "Email" && !validateEmail(item.value)){
+            else if(item.field === "Email" && !validateEmail(item.value)){
                 errorList.push(item.field + " is not valid.")
             }
         });
