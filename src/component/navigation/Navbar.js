@@ -23,7 +23,7 @@ const Navigation = () =>{
                 <Nav className="mx-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/post-feedback">Post Feedback</Nav.Link>
-                    <Nav.Link href="/" className="text-danger" onClick={handleLogout}>Logout</Nav.Link>
+                    <Nav.Link href="/" className="text-danger">Logout</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
