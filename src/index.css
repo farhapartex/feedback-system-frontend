@@ -29,6 +29,24 @@ code {
 }
 
 
+#feedbackListBlock{
+  width:85%;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+#feedbackInsight{
+  padding: 0px !important;
+  margin: 0px !important;
+  list-style: none;
+}
+
+#feedbackInsight li{
+  float: left;
+  padding-right: 1rem;
+  font-size: 14px;
+  color: #ff6600;
+}
 
 
 @media screen and (min-width: 750px) and (max-width: 1000px) {

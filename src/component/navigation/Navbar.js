@@ -12,7 +12,8 @@ class Navigation extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
+                        <Nav.Link href="#link">Post Feedback</Nav.Link>
+                        <Nav.Link href="#link" className="text-danger">Logout</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
