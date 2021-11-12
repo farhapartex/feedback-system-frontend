@@ -34,11 +34,16 @@ code {
   vertical-align:middle;
 }
 
-
-#feedbackListBlock{
-  width:85%;
+#appRootBlock{
+  width: 90%;
   margin: auto;
   margin-top: 3rem;
+}
+
+
+#feedbackListBlock{
+  width:90%;
+  margin: auto;
 }
 
 #feedbackInsight{
@@ -53,6 +58,16 @@ code {
   float: left;
   padding-right: 1rem;
   font-size: 14px;
+  color: #ff6600;
+}
+
+.anchor{
+  text-decoration: none;
+  color: #ff6600;
+}
+
+.anchor:hover{
+  text-decoration: none;
   color: #ff6600;
 }
 

@@ -1,6 +1,8 @@
 import React, {Component} from "react";
-import {ListGroup,} from "react-bootstrap";
+import {ListGroup, Table, Container} from "react-bootstrap";
 import FeedbackCard from "./FeedbackCard";
+import Thead from "../common/table/Thead";
+import Trow from "../common/table/Trow";
 
 
 const  dummyFeedbackData = [
@@ -27,6 +29,34 @@ const  dummyFeedbackData = [
 
 class FeedbackList extends Component{
 
+    tableColums = ["#", "Department", "Topic", "Status", "Feedbacks", "Action"]
+    tableRows = [
+        {
+            "id": 1,
+            "department": "Engineering",
+            "topic": "The use of negative feedback in amplifier and process control",
+            "status": "Running",
+            "feedbacks": 124,
+            "action": "View"
+        },
+        {
+            "id": 2,
+            "department": "Marketing",
+            "topic": "The use of negative feedback in amplifier and process control",
+            "status": "Resolved",
+            "feedbacks": 268,
+            "action": "View"
+        },
+        {
+            "id": 3,
+            "department": "Engineering",
+            "topic": "The use of negative feedback in amplifier and process control",
+            "status": "Resolved",
+            "feedbacks": 322,
+            "action": "View"
+        }
+    ]
+
     renderListItem = () =>{
         let dataList = []
         dummyFeedbackData.forEach((item, index) => {
@@ -36,12 +66,23 @@ class FeedbackList extends Component{
         return dataList;
     }
 
+    renderRows = ()=>{
+        let rowList = [];
+        this.tableRows.forEach((item, index) => {
+            rowList.push(<Trow rowObj={item}/>)
+        })
+        return rowList;
+    }
+
     render(){
         return (
             <div className="" id="feedbackListBlock">
-                <ListGroup>
-                    {this.renderListItem()}
-                </ListGroup>
+                <Table striped bordered hover>
+                    <Thead headColumns={this.tableColums}/>
+                    <tbody>
+                        {this.renderRows()}
+                    </tbody>
+                </Table>
             </div>
         )
     }
