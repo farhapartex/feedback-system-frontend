@@ -26,7 +26,9 @@ code {
 
 
 #login-block{
-  width: 310px;
+  width: 410px;
+  padding: 5rem 3rem;
+  background: #e6e6e6;
   margin: auto;
   margin-top: 10rem;
   vertical-align:middle;
@@ -87,6 +89,17 @@ code {
 @media screen and (min-width: 750px) and (max-width: 1000px) {
   #login-block{
     width: 380px;
+    margin: auto;
+    margin-top: 10rem;
+    vertical-align:middle;
+  }
+ }
+
+ @media screen and (max-width: 749px) {
+  #login-block{
+    width: 330px;
+    padding: 3rem 2rem!important;
+    background: #e6e6e6;
     margin: auto;
     margin-top: 10rem;
     vertical-align:middle;
