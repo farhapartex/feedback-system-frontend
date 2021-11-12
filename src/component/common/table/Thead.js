@@ -6,8 +6,8 @@ class Thead extends Component{
     renderColums =()=>{
         let colList = [];
         const colums = this.props.headColumns;
-        colums.forEach(value => {
-            colList.push(<th>{value}</th>)
+        colums.forEach((value, index) => {
+            colList.push(<th key={index}>{value}</th>)
         });
         return colList;
     }

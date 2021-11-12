@@ -9,10 +9,10 @@ class Trow extends Component{
         const rowObj = this.props.rowObj;
         Object.keys(rowObj).forEach((key) => {
             if(key === "action"){
-                rowDataList.push(<td><Link to={"/feedback-detail/1"} className="anchor">{rowObj[key]}</Link></td>)
+                rowDataList.push(<td key={key}><Link to={"/feedback-detail/1"} className="anchor">{rowObj[key]}</Link></td>)
             }
             else{
-                rowDataList.push(<td>{rowObj[key]}</td>)
+                rowDataList.push(<td key={key}>{rowObj[key]}</td>)
             }
             
         })
