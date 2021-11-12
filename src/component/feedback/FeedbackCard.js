@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 
 class FeedbackCard extends Component{
     renderReviewer = ()=>{
@@ -15,10 +16,10 @@ class FeedbackCard extends Component{
         const {title, shortDescription, supporter} = this.props;
         return (
             <div className="w-100">
-                <h5>{title}</h5>
+                <h5><Link to={"feedback-detail/"+ 1} id="f-card-title">{title}</Link></h5>
                 <p>{shortDescription}...</p>
                 <ul id="feedbackInsight">
-                    <li>Supperter: {supporter}</li>
+                    <li>Total Vote: {supporter}</li>
                     <li>{this.renderReviewer()}</li>
                 </ul>
             </div>
