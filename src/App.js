@@ -1,5 +1,4 @@
 import React from "react";
-import {Routes, Route} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import './App.css';
 import Login from "./pages/Login";
@@ -21,9 +20,7 @@ function App() {
   if(user && user.isLoggedIn && user.user){
     return (
       <div className="App">
-        <Routes>
-          <Route path="/" element={<RootPage/>}/>
-        </Routes>
+        <RootPage/>
       </div>
     );
   }
