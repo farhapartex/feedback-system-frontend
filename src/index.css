@@ -62,7 +62,7 @@ code {
 }
 
 #f-detail{
-  width: 65%;
+  width: 60%;
   margin: auto;
 }
 
@@ -81,8 +81,13 @@ code {
 
 
 #f-comment-block{
-  width: 65%;
+  width: 60%;
   margin: auto;
+}
+
+.commentBy{
+  color: #ff6600;
+  margin-right: 1rem;
 }
 
 

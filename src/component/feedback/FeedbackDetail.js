@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import FeedbackCommentForm from "./FeedbackCommentForm";
+import CommentList from "./CommentList";
 
 
 class FeedbackDetail extends Component{
@@ -50,6 +51,7 @@ class FeedbackDetail extends Component{
                 <div id="f-comment-block" className="mt-5">
                     <h5>Comments</h5>
                     <FeedbackCommentForm/>
+                    <CommentList />
                 </div>
             </div>
         )
