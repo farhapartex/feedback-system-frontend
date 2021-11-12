@@ -16,6 +16,10 @@ code {
     monospace;
 }
 
+.App{
+  padding-bottom: 3rem;
+}
+
 .form-group{
   margin-bottom: 1rem;
 }
@@ -39,6 +43,8 @@ code {
   padding: 0px !important;
   margin: 0px !important;
   list-style: none;
+  overflow: hidden;
+  text-align: center;
 }
 
 #feedbackInsight li{
@@ -48,6 +54,35 @@ code {
   color: #ff6600;
 }
 
+#f-card-title{
+  color: #ff6600;
+  text-decoration: none;
+}
+
+#f-detail{
+  width: 65%;
+  margin: auto;
+}
+
+#f-detail-insight{
+  width: 90%;
+  margin: auto;
+}
+
+#f-detail-insight ul li{
+  display: inline;
+  padding-right: 1rem;
+  font-size: 14px;
+  color: #ff6600;
+  float: none;
+}
+
+
+#f-comment-block{
+  width: 65%;
+  margin: auto;
+}
+
 
 @media screen and (min-width: 750px) and (max-width: 1000px) {
   #login-block{
@@ -55,5 +90,23 @@ code {
     margin: auto;
     margin-top: 10rem;
     vertical-align:middle;
+  }
+ }
+
+ @media screen and (max-width: 776px) {
+  #f-detail{
+    width: 78%;
+    margin: auto;
+    text-align: justify;
+  }
+
+  #f-comment-block{
+    width: 78%;
+    margin: auto;
+  }
+
+  #f-detail-headeing{
+    width: 87% !important;
+    margin: auto;
   }
  }
