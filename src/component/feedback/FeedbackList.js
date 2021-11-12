@@ -1,47 +1,31 @@
 import React, {Component} from "react";
-import {ListGroup,} from "react-bootstrap";
-import FeedbackCard from "./FeedbackCard";
-
-
-const  dummyFeedbackData = [
-    {
-        title: "Where does it come from?",
-        shortDescription: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
-        supporter: "259",
-        reviewer: "Nazmul Hasan"
-    },
-    {
-        title: "Where can I get some?",
-        shortDescription: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
-        supporter: "164",
-        reviewer: null
-    },
-    {
-        title: "Where does it come from?",
-        shortDescription: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
-        supporter: "114",
-        reviewer: null
-    }
-
-];
+import {Table} from "react-bootstrap";
+import Thead from "../common/table/Thead";
+import Trow from "../common/table/Trow";
+import { feedbackDataList } from "../../dummyData/feedbackData";
 
 class FeedbackList extends Component{
 
-    renderListItem = () =>{
-        let dataList = []
-        dummyFeedbackData.forEach((item, index) => {
-            dataList.push(<ListGroup.Item key={index}><FeedbackCard title={item.title} shortDescription={item.shortDescription} supporter={item.supporter} reviewer={item.reviewer}/></ListGroup.Item>)
-        })
+    tableColums = ["#", "Department", "Topic", "Status", "Feedbacks", "Action"]
+    tableRows = feedbackDataList;
 
-        return dataList;
+    renderRows = ()=>{
+        let rowList = [];
+        this.tableRows.forEach((item, index) => {
+            rowList.push(<Trow key={index} rowObj={item}/>)
+        })
+        return rowList;
     }
 
     render(){
         return (
             <div className="" id="feedbackListBlock">
-                <ListGroup>
-                    {this.renderListItem()}
-                </ListGroup>
+                <Table striped bordered hover>
+                    <Thead headColumns={this.tableColums}/>
+                    <tbody>
+                        {this.renderRows()}
+                    </tbody>
+                </Table>
             </div>
         )
     }

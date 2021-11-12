@@ -34,11 +34,28 @@ code {
   vertical-align:middle;
 }
 
-
-#feedbackListBlock{
-  width:85%;
+#appRootBlock{
+  width: 90%;
   margin: auto;
   margin-top: 3rem;
+}
+
+.w-90{
+  width: 90%;
+}
+
+.sideNavBar a{
+  text-decoration: none;
+  color: #ff6600;
+}
+
+#logoutTxt{
+  cursor: pointer;
+}
+
+#feedbackListBlock{
+  width:90%;
+  margin: auto;
 }
 
 #feedbackInsight{
@@ -56,13 +73,23 @@ code {
   color: #ff6600;
 }
 
+.anchor{
+  text-decoration: none;
+  color: #ff6600;
+}
+
+.anchor:hover{
+  text-decoration: none;
+  color: #ff6600;
+}
+
 #f-card-title{
   color: #ff6600;
   text-decoration: none;
 }
 
 #f-detail{
-  width: 65%;
+  width: 80%;
   margin: auto;
 }
 
@@ -81,8 +108,13 @@ code {
 
 
 #f-comment-block{
-  width: 65%;
+  width: 80%;
   margin: auto;
+}
+
+.commentBy{
+  color: #ff6600;
+  margin-right: 1rem;
 }
 
 
