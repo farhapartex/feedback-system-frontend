@@ -29,7 +29,7 @@ class FeedbackList extends Component{
 
     renderListItem = () =>{
         let dataList = []
-        dummyFeedbackData.map((item, index) => {
+        dummyFeedbackData.forEach((item, index) => {
             dataList.push(<ListGroup.Item key={index}><FeedbackCard title={item.title} shortDescription={item.shortDescription} supporter={item.supporter} reviewer={item.reviewer}/></ListGroup.Item>)
         })
 

@@ -44,7 +44,6 @@ const Login = ()=>{
         const errorList = []
         
         fieldList.forEach((item, index) =>{
-            console.log(item)
             if(! item.value || item.length === 0){
                 errorList.push(item.field + " is missing")
             }

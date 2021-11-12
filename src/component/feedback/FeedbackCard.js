@@ -18,7 +18,7 @@ class FeedbackCard extends Component{
                 <h5>{title}</h5>
                 <p>{shortDescription}...</p>
                 <ul id="feedbackInsight">
-                    <li>{supporter}</li>
+                    <li>Supperter: {supporter}</li>
                     <li>{this.renderReviewer()}</li>
                 </ul>
             </div>
