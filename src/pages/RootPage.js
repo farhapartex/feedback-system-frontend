@@ -7,7 +7,7 @@ import Navigation from "../component/navigation/Navbar";
 import HomePage from "./HomePage";
 import PostFeedback from "../component/feedback/postFeedback/PostFeedback";
 import FeedbackDetail from "../component/feedback/FeedbackDetail";
-import Profile from "../component/profile/Profile";
+import Profile from "../component/profile";
 
 const RootPage = () => {
     const dispatch = useDispatch();
