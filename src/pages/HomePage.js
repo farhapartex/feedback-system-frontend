@@ -12,7 +12,7 @@ const HomePage = () => {
     
         return (
             <div>
-                <div className="w-90 mx-auto mb-3">
+                <div className="mx-auto mb-3">
                     <Button variant="primary" className="float-right" onClick={()=>{handleCreateNavigation()}}>Create Feedback</Button>
                 </div>
                 
