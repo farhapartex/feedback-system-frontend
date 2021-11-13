@@ -7,6 +7,7 @@ import Navigation from "../component/navigation/Navbar";
 import HomePage from "./HomePage";
 import PostFeedback from "../component/feedback/postFeedback/PostFeedback";
 import FeedbackDetail from "../component/feedback/FeedbackDetail";
+import Profile from "../component/profile";
 
 const RootPage = () => {
     const dispatch = useDispatch();
@@ -31,11 +32,15 @@ const RootPage = () => {
                             </ListGroup>
                         </div>
                         <div className="col-10">
-                            <Routes>
-                                <Route path="/" element={<HomePage/>}/>
-                                <Route path="/feedback-detail/:id" element={<FeedbackDetail/>}/>
-                                <Route path="/create-feedback" element={<PostFeedback/>}/>
-                            </Routes>
+                            <div className="w-90 mx-auto">
+                                <Routes>
+                                    <Route path="/" element={<HomePage/>}/>
+                                    <Route path="/feedback-detail/:id" element={<FeedbackDetail/>}/>
+                                    <Route path="/create-feedback" element={<PostFeedback/>}/>
+                                    <Route path="/profile" element={<Profile/>}/>
+                                </Routes>
+                            </div>
+                            
                         </div>
                     </div>
                 </Container>
