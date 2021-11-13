@@ -1,7 +1,18 @@
 import React, {useState} from "react";
+import { useSelector } from "react-redux";
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 
 const Profile = ()=>{
+
+    let userState = useSelector((state) => state.user);
+    let user = null;
+
+    if(!userState || (userState && !userState.isLoggedIn && !userState.user)){
+        user = JSON.parse(localStorage.getItem("user"));        
+    }
+    else{
+        user = userState.user;
+    }
 
     const [firstName, setFirstName] = useState("Md Nazmul");
     const [lastName, setLastName] = useState("Hasan");
@@ -80,7 +91,7 @@ const Profile = ()=>{
                     <div className="col-4">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" value="hasan@gmail.com" readOnly/>
+                            <Form.Control type="email" value={user.email} readOnly/>
                         </Form.Group>
                     </div>
 
