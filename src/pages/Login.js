@@ -29,7 +29,8 @@ const Login = ()=>{
         const requestBody = {
             email: email,
             password: password,
-            isLoggedIn: true
+            isLoggedIn: true,
+            isAdmin: email !== "admin@abcxyz.com" ? false : true
         }
 
         dispatch(login(requestBody));

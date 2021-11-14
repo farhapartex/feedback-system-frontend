@@ -1,6 +1,6 @@
 import React from "react";
 import {Routes, Route, Link, useNavigate} from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {Container, ListGroup} from "react-bootstrap";
 import { logout } from "../features/userSlice";
 import Navigation from "../component/navigation/Navbar";
@@ -15,6 +15,8 @@ import EmployeeList from "../component/employee/EmployeeList";
 
 const RootPage = () => {
     const dispatch = useDispatch();
+    let user = useSelector((state) => state.user);
+
     const navigate = useNavigate();
 
     const handleLogout = ()=>{
@@ -32,7 +34,7 @@ const RootPage = () => {
                             <ListGroup className="sideNavBar">
                                 <ListGroup.Item><Link to="/">Home</Link></ListGroup.Item>
                                 <ListGroup.Item><Link to="/self-feedbacks">My Feedbacks</Link></ListGroup.Item>
-                                <ListGroup.Item><Link to="/employee">Employee</Link></ListGroup.Item>
+                                {user.user.isAdmin && <ListGroup.Item><Link to="/employee">Employee</Link></ListGroup.Item>}
                                 <ListGroup.Item><Link to="/profile">Profile</Link></ListGroup.Item>
                                 <ListGroup.Item><span className="text-danger" id="logoutTxt" onClick={handleLogout}>Logout</span></ListGroup.Item>
                             </ListGroup>

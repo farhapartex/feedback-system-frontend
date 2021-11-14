@@ -1,10 +1,13 @@
 import React, {useState} from "react";
-import {Table, Button} from "react-bootstrap";
+import { useSelector } from "react-redux";
+import {Table, Button, Alert} from "react-bootstrap";
 import Thead from "../common/table/Thead";
 import Trow from "../common/table/Trow";
 import { EmployeeListData } from "../../dummyData/employeeListData";
 import { EmployeeInviteModal } from "../common/modal";
 const EmployeeList = ()=> {
+    let user = useSelector((state) => state.user);
+
     const tableColums = ["#", "First Name", "Last Name", "Designation", "Email", "Action"];
     const [isShowInviteModal, setIsShowInviteModal] = useState(false);
 
@@ -16,6 +19,14 @@ const EmployeeList = ()=> {
             rowList.push(<Trow key={index} rowObj={item} url={url}/>)
         })
         return rowList;
+    }
+
+    if(!user.user.isAdmin){
+        return (
+            <Alert variant="secondary">
+                <p className="text-center"><b>You're not permitted for this page!</b></p>
+            </Alert>
+        )
     }
 
     return (

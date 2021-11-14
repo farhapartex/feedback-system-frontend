@@ -1,7 +1,7 @@
 #### Project Live URL:
  Click: https://employee-feedback.netlify.app/
- email : (Any valid email)
- password: (Any)
+ Email :: For admin: admin@abcxyz.com | For employee use any valid email
+ Password :: (Any)
 
 # Getting Started with Create React App
 
