@@ -1,13 +1,25 @@
-import React, {useState} from "react";
+import React from "react";
 import { useParams, } from "react-router";
-import { Container, Alert } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import ShortSummary from "./summary/ShortSummary";
 import { ShortSummaryData } from "../../dummyData/shortSummaryData";
+import QuestionSummary from "./summary/QuestionSummary";
+import { QuestionSummaryData } from "../../dummyData/questionSummaryData";
 
 const SelfFeedbackDetail = () => {
         const params = useParams();
-        console.log(parseInt(params.id));
-        const [shortSummaryObj, setShortSummaryObj] = useState(ShortSummaryData[parseInt(params.id)-1]);
+        const shortSummaryObj = ShortSummaryData[parseInt(params.id)-1];
+
+        const renderQuestionSummary = ()=>{
+            let items = [];
+
+            QuestionSummaryData.forEach((item, index) => {
+                items.push(<QuestionSummary key={index} summaryData={item}/>)
+            });
+
+            return items;
+        }
+
     
         return (
             <div className="w-100"> 
@@ -27,6 +39,18 @@ const SelfFeedbackDetail = () => {
 
                     <Container fluid>
                         <ShortSummary summaryData={shortSummaryObj}/>
+                    </Container>
+                </div>
+
+                <div className="w-100 mt-5" id="selfFeedbackShortSummary">
+                    <Button variant="danger">Close Feedbck</Button>
+                </div>
+
+                <div className="w-100 mt-5" id="selfFeedbackShortSummary">
+                    <h5>Question Summary</h5>
+
+                    <Container fluid>
+                        {renderQuestionSummary()}
                     </Container>
                 </div>
 

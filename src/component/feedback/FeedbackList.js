@@ -18,7 +18,7 @@ class FeedbackList extends Component{
         let rowList = [];
         this.tableRows.forEach((item, index) => {
             let url = "";
-            if(this.props.type == "general"){
+            if(this.props.type === "general"){
                 url = "/feedback-detail/" + item["id"];
             }
             else{

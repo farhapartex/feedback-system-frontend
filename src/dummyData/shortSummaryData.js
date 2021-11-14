@@ -26,5 +26,12 @@ export const ShortSummaryData = [
         totalFeedback: 100,
         totalView: 298,
         totalComment: 15
+    },
+    {
+        id: "5",
+        totalQuestion: 10,
+        totalFeedback: 100,
+        totalView: 298,
+        totalComment: 15
     }
 ]
