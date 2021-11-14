@@ -12,14 +12,12 @@ class Trow extends Component{
         let rowDataList = [];
         const rowObj = this.props.rowObj;
         Object.keys(rowObj).forEach((key) => {
-            if(key === "action"){
-                rowDataList.push(<td key={key}><Link to={this.props.url} className="anchor">{rowObj[key]}</Link></td>)
-            }
-            else{
-                rowDataList.push(<td key={key}>{rowObj[key]}</td>)
-            }
-            
+            rowDataList.push(<td key={key}>{rowObj[key]}</td>)
         })
+
+        if(this.props.url){
+            rowDataList.push(<td key="url"><Link to={this.props.url} className="anchor">View</Link></td>)
+        }
         return rowDataList;
     }
 

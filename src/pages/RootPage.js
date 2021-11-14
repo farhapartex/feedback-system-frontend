@@ -1,6 +1,6 @@
 import React from "react";
 import {Routes, Route, Link, useNavigate} from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {Container, ListGroup} from "react-bootstrap";
 import { logout } from "../features/userSlice";
 import Navigation from "../component/navigation/Navbar";
@@ -11,9 +11,12 @@ import Profile from "../component/profile";
 import SelfFeedbackList from "../component/feedback/SelfFeedbackList";
 import SelfFeedbackDetail from "../component/feedback/SelfFeedbackDetail";
 import NotFound from "../component/NotFound";
+import EmployeeList from "../component/employee/EmployeeList";
 
 const RootPage = () => {
     const dispatch = useDispatch();
+    let user = useSelector((state) => state.user);
+
     const navigate = useNavigate();
 
     const handleLogout = ()=>{
@@ -31,6 +34,7 @@ const RootPage = () => {
                             <ListGroup className="sideNavBar">
                                 <ListGroup.Item><Link to="/">Home</Link></ListGroup.Item>
                                 <ListGroup.Item><Link to="/self-feedbacks">My Feedbacks</Link></ListGroup.Item>
+                                {user.user.isAdmin && <ListGroup.Item><Link to="/employee">Employee</Link></ListGroup.Item>}
                                 <ListGroup.Item><Link to="/profile">Profile</Link></ListGroup.Item>
                                 <ListGroup.Item><span className="text-danger" id="logoutTxt" onClick={handleLogout}>Logout</span></ListGroup.Item>
                             </ListGroup>
@@ -44,6 +48,7 @@ const RootPage = () => {
                                     <Route exact path="/profile" element={<Profile/>}/>
                                     <Route exact path="/self-feedbacks" element={<SelfFeedbackList/>}/>
                                     <Route exact path="/self-feedback-detail/:id" element={<SelfFeedbackDetail/>}/>
+                                    <Route exact path="/employee" element={<EmployeeList/>}/>
                                     <Route exact path="*" element={<NotFound/>}/>
                                 </Routes>
                             </div>
