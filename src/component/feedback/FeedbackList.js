@@ -22,7 +22,7 @@ class FeedbackList extends Component{
                 url = "/feedback-detail/" + item["id"];
             }
             else{
-                url = "/self-feedback-detail/"
+                url = "/self-feedback-detail/" + item["id"];
             }
             
             rowList.push(<Trow key={index} rowObj={item} url={url}/>)
