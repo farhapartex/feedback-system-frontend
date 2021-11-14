@@ -1,4 +1,5 @@
 import VerticallyCenteredModal from "./verticallyCenteredModal";
 import ConfirmationModal from "./ConfirmationModal";
+import EmployeeInviteModal from "./EmployeeInviteModal";
 
-export {VerticallyCenteredModal, ConfirmationModal};
+export {VerticallyCenteredModal, ConfirmationModal, EmployeeInviteModal};

@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {Table, Button} from "react-bootstrap";
 import Thead from "../common/table/Thead";
 import Trow from "../common/table/Trow";
 import { EmployeeListData } from "../../dummyData/employeeListData";
-
+import { EmployeeInviteModal } from "../common/modal";
 const EmployeeList = ()=> {
     const tableColums = ["#", "First Name", "Last Name", "Designation", "Email", "Action"];
+    const [isShowInviteModal, setIsShowInviteModal] = useState(false);
 
     const renderRows = ()=>{
         let rowList = [];
@@ -19,8 +20,9 @@ const EmployeeList = ()=> {
 
     return (
         <div className="w-100">
+            {<EmployeeInviteModal show={isShowInviteModal} onHide={() => setIsShowInviteModal(false)}/>}
             <div className="mx-auto mb-3">
-                <Button variant="primary" className="float-right">Invite Employee</Button>
+                <Button variant="primary" className="float-right" onClick={()=>{setIsShowInviteModal(true)}}>Invite Employee</Button>
             </div>
             <Table striped bordered hover>
                 <Thead headColumns={tableColums}/>
