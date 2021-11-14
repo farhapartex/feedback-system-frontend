@@ -23,7 +23,7 @@ const Navigation = () =>{
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto" id="minimizeNav">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/">My Feedback</Nav.Link>
+                    <Nav.Link href="/self-feedbacks">My Feedback</Nav.Link>
                     <Nav.Link href="/profile">Profile</Nav.Link>
                     <Nav.Link href="/" onClick={handleLogout} className="text-danger">Logout</Nav.Link>
                 </Nav>
