@@ -21,7 +21,17 @@ const PostFeedback = ()=> {
             <Container fluid>
                 <h5>Create Feedback</h5>
                 <div className="row feedbackFormBlock">
-                    <div className="col-12">
+                    <div className="col-4">
+                        <Form.Group className="mb-3" controlId="feedbackTopic">
+                            <Form.Label>Select Department <span className="text-danger">*</span></Form.Label>
+                            <Form.Select aria-label="Floating label select example">
+                                <option value="Marketing">Marketing</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="HR">Hr & Admin</option>
+                            </Form.Select>
+                        </Form.Group>
+                    </div>
+                    <div className="col-8">
                         <Form.Group className="mb-3" controlId="feedbackTopic">
                             <Form.Label>Feedback Topic <span className="text-danger">*</span></Form.Label>
                             <Form.Control type="text" placeholder="Enter topic ..." />
@@ -36,10 +46,10 @@ const PostFeedback = ()=> {
                 </div>
 
                 
-                <div className="row mb-5">
+                <div className="row mt-4 mb-5">
                     <div className="col-12">
                         <Button className="margin-r1" variant="secondary" onClick={()=>{addFeedbackForm()}}>Add Question</Button>
-                        <Button variant="primary" className="ml-4" onClick={()=>{addFeedbackForm()}}>Submit</Button>
+                        <Button variant="primary" className="ml-4">Submit</Button>
                     </div>
                 </div>
                 <h5 className="mt-4">Feedback Questions</h5>
