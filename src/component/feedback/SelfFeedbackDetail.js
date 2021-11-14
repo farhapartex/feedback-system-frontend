@@ -1,13 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import { useParams, } from "react-router";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Alert } from "react-bootstrap";
 import ShortSummary from "./summary/ShortSummary";
 import { ShortSummaryData } from "../../dummyData/shortSummaryData";
 import QuestionSummary from "./summary/QuestionSummary";
 import { QuestionSummaryData } from "../../dummyData/questionSummaryData";
+import {ConfirmationModal } from "../common/modal";
 
 const SelfFeedbackDetail = () => {
         const params = useParams();
+        const [isShowModal, setIsShowModal] = useState(false);
+        const [isShowBanner, setIsShowBanner] = useState(false);
+        const [bannerMessage, setBannerMessage] = useState("");
         const shortSummaryObj = ShortSummaryData[parseInt(params.id)-1];
 
         const renderQuestionSummary = ()=>{
@@ -20,9 +24,22 @@ const SelfFeedbackDetail = () => {
             return items;
         }
 
+        const handleCloseFeedback = ()=>{
+            setIsShowBanner(true);
+            setBannerMessage("Your feedback closed successfully.");
+            setIsShowModal(false);
+        }
+
+        const SuccessBanner = ()=>{
+            return <Alert variant="success" onClose={() => setIsShowBanner(false)} dismissible>{bannerMessage}</Alert>
+        }
+
     
         return (
-            <div className="w-100"> 
+            <div className="w-100">
+                {isShowBanner && <SuccessBanner/>}
+
+                <ConfirmationModal show={isShowModal} onHide={() => setIsShowModal(false)} question="Are you sure to close this Feedback?" closeFeedback={handleCloseFeedback}/>
                 <div className="w-100">
                     <h5>Topic: The use of negative feedback in amplifier and process control</h5>
                 </div>
@@ -43,7 +60,7 @@ const SelfFeedbackDetail = () => {
                 </div>
 
                 <div className="w-100 mt-5" id="selfFeedbackShortSummary">
-                    <Button variant="danger">Close Feedbck</Button>
+                    <Button variant="danger" onClick={()=> {setIsShowModal(true)}}>Close Feedbck</Button>
                 </div>
 
                 <div className="w-100 mt-5" id="selfFeedbackShortSummary">
