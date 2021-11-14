@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 
 
 class Trow extends Component{
+    constructor(props){
+        super(props);
+        this.props = props;
+    }
 
     renderCell = ()=>{
         let rowDataList = [];
         const rowObj = this.props.rowObj;
         Object.keys(rowObj).forEach((key) => {
             if(key === "action"){
-                rowDataList.push(<td key={key}><Link to={"/feedback-detail/1"} className="anchor">{rowObj[key]}</Link></td>)
+                rowDataList.push(<td key={key}><Link to={this.props.url} className="anchor">{rowObj[key]}</Link></td>)
             }
             else{
                 rowDataList.push(<td key={key}>{rowObj[key]}</td>)

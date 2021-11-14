@@ -16,7 +16,7 @@ const HomePage = () => {
                     <Button variant="primary" className="float-right" onClick={()=>{handleCreateNavigation()}}>Create Feedback</Button>
                 </div>
                 
-                <FeedbackList />
+                <FeedbackList type="general"/>
             </div>
         )
 }
