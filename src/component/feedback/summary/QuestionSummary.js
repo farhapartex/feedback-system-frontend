@@ -5,10 +5,12 @@ import { Alert } from "react-bootstrap";
 class QuestionSummary extends Component{
     render(){
         const summaryData = this.props.summaryData;
+        const id = this.props.id;
+
         return (
             <div className="row mt-4">
                 <div className="col-12">
-                    <p>{summaryData.question}</p>
+                    <p><b>#{id+1}</b> {summaryData.question}</p>
                 </div>
                 <div className="col-lg-3 col-sm-12 col-md-4">
                     <Alert variant="success">

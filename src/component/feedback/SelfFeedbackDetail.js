@@ -12,22 +12,44 @@ const SelfFeedbackDetail = () => {
         const [isShowModal, setIsShowModal] = useState(false);
         const [isShowBanner, setIsShowBanner] = useState(false);
         const [bannerMessage, setBannerMessage] = useState("");
+        const [statusText, setStatusText] = useState("Running");
+        const [isShowCloeButton, setIsShowCloeButton] = useState(true);
+
         const shortSummaryObj = ShortSummaryData[parseInt(params.id)-1];
 
         const renderQuestionSummary = ()=>{
             let items = [];
 
             QuestionSummaryData.forEach((item, index) => {
-                items.push(<QuestionSummary key={index} summaryData={item}/>)
+                items.push(<QuestionSummary key={index} id={index} summaryData={item}/>)
             });
 
             return items;
+        }
+
+        const FeedbackCloseButton = ()=>{
+            return (
+                <div className="w-100 mt-5" id="selfFeedbackShortSummary">
+                    <Button variant="danger" onClick={()=> {setIsShowModal(true)}}>Close Feedbck</Button>
+                </div>
+            )
         }
 
         const handleCloseFeedback = ()=>{
             setIsShowBanner(true);
             setBannerMessage("Your feedback closed successfully.");
             setIsShowModal(false);
+            setStatusText("Closed");
+            setIsShowCloeButton(false);
+        }
+
+        const renderFeedbackStatusText = ()=> {
+            if(statusText === "Running"){
+                return <span className="text-info">{statusText}</span>
+            }
+
+            return <span className="text-danger">{statusText}</span>
+            
         }
 
         const SuccessBanner = ()=>{
@@ -39,9 +61,11 @@ const SelfFeedbackDetail = () => {
             <div className="w-100">
                 {isShowBanner && <SuccessBanner/>}
 
-                <ConfirmationModal show={isShowModal} onHide={() => setIsShowModal(false)} question="Are you sure to close this Feedback?" closeFeedback={handleCloseFeedback}/>
+                <ConfirmationModal show={isShowModal} onHide={() => setIsShowModal(false)} question="Are you sure to close this Feedback?" handleCloseFeedback={handleCloseFeedback}/>
                 <div className="w-100">
-                    <h5>Topic: The use of negative feedback in amplifier and process control</h5>
+                    <h5>
+                        Topic: The use of negative feedback in amplifier and process control ({renderFeedbackStatusText()})
+                    </h5>
                 </div>
                 <div className="w-100 mt-4">
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
@@ -59,9 +83,7 @@ const SelfFeedbackDetail = () => {
                     </Container>
                 </div>
 
-                <div className="w-100 mt-5" id="selfFeedbackShortSummary">
-                    <Button variant="danger" onClick={()=> {setIsShowModal(true)}}>Close Feedbck</Button>
-                </div>
+                {isShowCloeButton && <FeedbackCloseButton /> }
 
                 <div className="w-100 mt-5" id="selfFeedbackShortSummary">
                     <h5>Question Summary</h5>

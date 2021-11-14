@@ -2,9 +2,11 @@ import React from "react"
 import { Modal, Button } from "react-bootstrap"
 
 const ConfirmationModal = (props) => {
+    const {show, onHide, question, handleCloseFeedback} = props;
     return (
         <Modal
-          {...props}
+          show={show}
+          onHide={onHide}
           size="md"
           aria-labelledby="contained-modal-title-vcenter"
           centered
@@ -16,9 +18,9 @@ const ConfirmationModal = (props) => {
           </Modal.Header>
           <Modal.Body>
             <p className="text-danger">
-              {props.question}
+              {question}
             </p>
-            <Button variant="danger" onClick={()=>{props.closeFeedback()}}>Submit</Button>
+            <Button variant="danger" onClick={handleCloseFeedback}>Submit</Button>
           </Modal.Body>
         </Modal>
       );
