@@ -8,6 +8,8 @@ import HomePage from "./HomePage";
 import PostFeedback from "../component/feedback/postFeedback/PostFeedback";
 import FeedbackDetail from "../component/feedback/FeedbackDetail";
 import Profile from "../component/profile";
+import SelfFeedbackList from "../component/feedback/SelfFeedbackList";
+import SelfFeedbackDetail from "../component/feedback/SelfFeedbackDetail";
 
 const RootPage = () => {
     const dispatch = useDispatch();
@@ -27,7 +29,7 @@ const RootPage = () => {
                         <div className="col-md-4 col-lg-2" id="leftbar">
                             <ListGroup className="sideNavBar">
                                 <ListGroup.Item><Link to="/">Home</Link></ListGroup.Item>
-                                <ListGroup.Item><Link to="/">My Feedbacks</Link></ListGroup.Item>
+                                <ListGroup.Item><Link to="/self-feedbacks">My Feedbacks</Link></ListGroup.Item>
                                 <ListGroup.Item><Link to="/profile">Profile</Link></ListGroup.Item>
                                 <ListGroup.Item><span className="text-danger" id="logoutTxt" onClick={handleLogout}>Logout</span></ListGroup.Item>
                             </ListGroup>
@@ -39,6 +41,8 @@ const RootPage = () => {
                                     <Route path="/feedback-detail/:id" element={<FeedbackDetail/>}/>
                                     <Route path="/create-feedback" element={<PostFeedback/>}/>
                                     <Route path="/profile" element={<Profile/>}/>
+                                    <Route path="/self-feedbacks" element={<SelfFeedbackList/>}/>
+                                    <Route path="/self-feedback-detail/:id" element={<SelfFeedbackDetail/>}/>
                                 </Routes>
                             </div>
                             

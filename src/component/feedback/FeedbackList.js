@@ -6,13 +6,26 @@ import { feedbackDataList } from "../../dummyData/feedbackData";
 
 class FeedbackList extends Component{
 
+    constructor(props){
+        super(props);
+        this.props = props;
+    }
+
     tableColums = ["#", "Department", "Topic", "Status", "Feedbacks", "Action"]
     tableRows = feedbackDataList;
 
     renderRows = ()=>{
         let rowList = [];
         this.tableRows.forEach((item, index) => {
-            rowList.push(<Trow key={index} rowObj={item}/>)
+            let url = "";
+            if(this.props.type === "general"){
+                url = "/feedback-detail/" + item["id"];
+            }
+            else{
+                url = "/self-feedback-detail/" + item["id"];
+            }
+            
+            rowList.push(<Trow key={index} rowObj={item} url={url}/>)
         })
         return rowList;
     }

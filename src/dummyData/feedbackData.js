@@ -19,7 +19,7 @@ export const feedbackDataList = [
         "id": 3,
         "department": "Engineering",
         "topic": "There are many variations of passages of Lorem Ipsum available",
-        "status": "Resolved",
+        "status": "Closed",
         "feedbacks": 322,
         "action": "View"
     },
