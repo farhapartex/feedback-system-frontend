@@ -12,7 +12,7 @@ const Navigation = () =>{
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/post-feedback">Post Feedback</Nav.Link>
+                    <Nav.Link href="/notification">Notifications</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
