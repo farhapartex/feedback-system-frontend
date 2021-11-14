@@ -24,14 +24,15 @@ const RootPage = () => {
             <div id="appRootBlock">
                 <Container fluid>
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-md-4 col-lg-2" id="leftbar">
                             <ListGroup className="sideNavBar">
-                                <ListGroup.Item><Link to="/">Feedbacks</Link></ListGroup.Item>
+                                <ListGroup.Item><Link to="/">Home</Link></ListGroup.Item>
+                                <ListGroup.Item><Link to="/">My Feedbacks</Link></ListGroup.Item>
                                 <ListGroup.Item><Link to="/profile">Profile</Link></ListGroup.Item>
                                 <ListGroup.Item><span className="text-danger" id="logoutTxt" onClick={handleLogout}>Logout</span></ListGroup.Item>
                             </ListGroup>
                         </div>
-                        <div className="col-10">
+                        <div className="col-lg-10 col-md-8" id="rightbar">
                             <div className="w-90 mx-auto">
                                 <Routes>
                                     <Route path="/" element={<HomePage/>}/>
