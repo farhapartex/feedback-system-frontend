@@ -91,21 +91,18 @@ code {
 
 #f-detail-insight{
   width: 90%;
-  margin: auto;
 }
 
 #f-detail-insight ul li{
-  display: inline;
   padding-right: 1rem;
   font-size: 14px;
   color: #ff6600;
-  float: none;
+  float: left;
 }
 
 
 #f-comment-block{
   width: 80%;
-  margin: auto;
 }
 
 .commentBy{
@@ -115,6 +112,10 @@ code {
 
 .feedbackFormBlock{
   width: 80%;
+}
+
+.question-row{
+  margin-bottom: 1.5rem;
 }
 
 .margin-r1{
