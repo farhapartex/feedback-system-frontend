@@ -18,10 +18,10 @@ const PostFeedback = ()=> {
 
     return (
         <div>
-            <Container fluid>
+            <Container fluid id="postFContainer">
                 <h5>Create Feedback</h5>
                 <div className="row feedbackFormBlock">
-                    <div className="col-4">
+                    <div className="col-lg-4 col-md-6 col-sm-12">
                         <Form.Group className="mb-3" controlId="feedbackTopic">
                             <Form.Label>Select Department <span className="text-danger">*</span></Form.Label>
                             <Form.Select aria-label="Floating label select example">
@@ -31,13 +31,13 @@ const PostFeedback = ()=> {
                             </Form.Select>
                         </Form.Group>
                     </div>
-                    <div className="col-8">
+                    <div className="col-lg-8 col-md-6 col-sm-12">
                         <Form.Group className="mb-3" controlId="feedbackTopic">
                             <Form.Label>Feedback Topic <span className="text-danger">*</span></Form.Label>
                             <Form.Control type="text" placeholder="Enter topic ..." />
                         </Form.Group>
                     </div>
-                    <div className="col-12">
+                    <div className="col-lg-12 col-md-12 col-sm-12">
                         <Form.Group className="mb-3" controlId="feedbackDescription">
                             <Form.Label>Description</Form.Label>
                             <Form.Control as="textarea" row={4} placeholder="Enter description ..." />

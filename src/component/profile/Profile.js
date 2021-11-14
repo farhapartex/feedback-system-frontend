@@ -66,7 +66,7 @@ const Profile = ()=>{
     };
 
     return (
-        <div className="w-100">
+        <div className="w-75" id="profileBlock">
 
             <Container fluid>
                 {isShowError && <ErrorBanner/> }
@@ -76,19 +76,19 @@ const Profile = ()=>{
                     <h5>Profile</h5>
                 </div>
                 <div className="row mt-4">
-                    <div className="col-4">
+                    <div className="col-sm-12 col-md-6 col-lg-4">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>First Name</Form.Label>
                             <Form.Control type="text" value={firstName} onChange={(e)=>{setFirstName(e.target.value)}}/>
                         </Form.Group>
                     </div>
-                    <div className="col-4">
+                    <div className="col-lg-4 col-sm-12 col-md-6">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Last Name</Form.Label>
                             <Form.Control type="text" value={lastName} onChange={(e)=>{setLastName(e.target.value)}}/>
                         </Form.Group>
                     </div>
-                    <div className="col-4">
+                    <div className="col-lg-4 col-md-6 col-sm-12">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email</Form.Label>
                             <Form.Control type="email" value={user.email} readOnly/>
