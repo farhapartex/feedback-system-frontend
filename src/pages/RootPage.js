@@ -10,6 +10,7 @@ import FeedbackDetail from "../component/feedback/FeedbackDetail";
 import Profile from "../component/profile";
 import SelfFeedbackList from "../component/feedback/SelfFeedbackList";
 import SelfFeedbackDetail from "../component/feedback/SelfFeedbackDetail";
+import NotFound from "../component/NotFound";
 
 const RootPage = () => {
     const dispatch = useDispatch();
@@ -37,12 +38,13 @@ const RootPage = () => {
                         <div className="col-lg-10 col-md-8" id="rightbar">
                             <div className="w-90 mx-auto">
                                 <Routes>
-                                    <Route path="/" element={<HomePage/>}/>
-                                    <Route path="/feedback-detail/:id" element={<FeedbackDetail/>}/>
-                                    <Route path="/create-feedback" element={<PostFeedback/>}/>
-                                    <Route path="/profile" element={<Profile/>}/>
-                                    <Route path="/self-feedbacks" element={<SelfFeedbackList/>}/>
-                                    <Route path="/self-feedback-detail/:id" element={<SelfFeedbackDetail/>}/>
+                                    <Route exact path="/" element={<HomePage/>}/>
+                                    <Route exact path="/feedback-detail/:id" element={<FeedbackDetail/>}/>
+                                    <Route exact path="/create-feedback" element={<PostFeedback/>}/>
+                                    <Route exact path="/profile" element={<Profile/>}/>
+                                    <Route exact path="/self-feedbacks" element={<SelfFeedbackList/>}/>
+                                    <Route exact path="/self-feedback-detail/:id" element={<SelfFeedbackDetail/>}/>
+                                    <Route exact path="*" element={<NotFound/>}/>
                                 </Routes>
                             </div>
                             
